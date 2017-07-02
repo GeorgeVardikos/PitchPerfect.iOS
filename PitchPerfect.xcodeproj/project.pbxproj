@@ -12,6 +12,7 @@
 		5E1E838B1F09A31800FC5249 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E83891F09A31800FC5249 /* Main.storyboard */; };
 		5E1E838D1F09A31800FC5249 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E838C1F09A31800FC5249 /* Assets.xcassets */; };
 		5E1E83901F09A31800FC5249 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E838E1F09A31800FC5249 /* LaunchScreen.storyboard */; };
+		5EFF71FB1F09B4E30023B0FD /* PlaySoundsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFF71FA1F09B4E30023B0FD /* PlaySoundsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		5E1E838C1F09A31800FC5249 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E1E838F1F09A31800FC5249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E1E83911F09A31800FC5249 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EFF71FA1F09B4E30023B0FD /* PlaySoundsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySoundsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				5E1E83851F09A31800FC5249 /* AppDelegate.swift */,
 				5E1E83871F09A31800FC5249 /* RecordSoundsVC.swift */,
+				5EFF71FA1F09B4E30023B0FD /* PlaySoundsVC.swift */,
 				5E1E83891F09A31800FC5249 /* Main.storyboard */,
 				5E1E838C1F09A31800FC5249 /* Assets.xcassets */,
 				5E1E838E1F09A31800FC5249 /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EFF71FB1F09B4E30023B0FD /* PlaySoundsVC.swift in Sources */,
 				5E1E83881F09A31800FC5249 /* RecordSoundsVC.swift in Sources */,
 				5E1E83861F09A31800FC5249 /* AppDelegate.swift in Sources */,
 			);
