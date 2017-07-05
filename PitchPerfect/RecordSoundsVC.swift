@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class RecordSoundsVC: UIViewController {
+class RecordSoundsVC: UIViewController, AVAudioRecorderDelegate {
 
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
@@ -40,12 +40,18 @@ class RecordSoundsVC: UIViewController {
         stopButton.isEnabled = true
         
         let directoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-        let recordingName = "PitchPerfect - Recorded voice.wav"
+        let recordingName = "PitchPerfect-Recorded-voice.wav"
         let pathArr = [directoryPath, recordingName]
-        let filePathURL = URL(string: pathArr.joined(separator: "/"))
+        let filePathURL = URL(string: pathArr.joined(separator: "/"))!
+        
+        print(filePathURL)
         
         try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord, with: .defaultToSpeaker)
-        try! audioRecorder = AVAudioRecorder(url: filePathURL!, settings: [:])
+        do {
+            try audioRecorder = AVAudioRecorder(url: filePathURL, settings: [:])
+        } catch {
+            print("error with the filepath? \(error)")
+        }
         audioRecorder.delegate = self
         audioRecorder.isMeteringEnabled = true
         audioRecorder.prepareToRecord()
@@ -60,9 +66,6 @@ class RecordSoundsVC: UIViewController {
         audioRecorder.stop()
         try! AVAudioSession.sharedInstance().setActive(false)
     }
-}
-
-extension RecordSoundsVC: AVAudioRecorderDelegate {
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag {
@@ -72,5 +75,5 @@ extension RecordSoundsVC: AVAudioRecorderDelegate {
         }
         
     }
-}
 
+}
